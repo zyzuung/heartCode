@@ -1273,4 +1273,4 @@ setTimeout(() => {
 setTimeout(() => {
     let nextPage = document.getElementById("heartPage");
     nextPage.click()
-}, 5000)
+}, 9000)
