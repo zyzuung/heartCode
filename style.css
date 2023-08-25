@@ -30,20 +30,16 @@ body {
 
 @keyframes change {
     0% {
-        background-color: #ffffff;
+        background-color: #e6dcdc;
     }
 
-    25% {
-        background-color: #c8aeae;
+    60% {
+        background-color: #625858;
         background-image: none;
     }
 
-    50% {
-        background-color: #816767;
-    }
-
-    75% {
-        background-color: #3e3636;
+    80% {
+        background-color: #2b2929;
         background-image: none;
     }
 
@@ -57,6 +53,21 @@ body {
     0% {
         transform: scale(1);
         opacity: 1;
+    }
+
+    20% {
+        transform: scale(10);
+        opacity: 0.7;
+    }
+
+    40% {
+        transform: scale(20);
+        opacity: 0.4;
+    }
+
+    70% {
+        transform: scale(30);
+        opacity: 0;
     }
 
     100% {
@@ -119,6 +130,6 @@ body {
 #typing-text {
     position: absolute;
     top: calc(50% - 3em);
-    font-size: 24px;
+    font-size: 20px;
     color: #2b00ff;
 }

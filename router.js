@@ -2,7 +2,7 @@ const IS_DESKTOP = window.innerWidth > 800;
 const MAX_WIDTH = 7680;
 const MAX_HEIGHT = 4320;
 const GRAVITY = 0.9;
-let simSpeed = 1;
+let simSpeed = 1.2;
 
 let stageW, stageH;
 
@@ -1264,7 +1264,7 @@ const Spark = {
         this._pool.push(instance);
     }
 }
-const text = "Click vào trái tim bên dưới để bắt đầu!";
+const text = "Click vào trái tim để bắt đầu!";
 const typingText = document.getElementById("typing-text");
 const body = document.body;
 const particle = document.getElementById("particle");

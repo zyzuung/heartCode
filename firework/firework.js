@@ -1,8 +1,8 @@
 const IS_DESKTOP = window.innerWidth > 800;
 const MAX_WIDTH = 7680;
 const MAX_HEIGHT = 4320;
-const GRAVITY = 0.9;
-let simSpeed = 1;
+const GRAVITY = 0.8;
+let simSpeed = 1.2;
 
 let stageW, stageH;
 
