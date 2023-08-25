@@ -1,24 +1,3 @@
-window.addEventListener('load', () => {
-    const currentPage = window.location.href.split('/').pop();
-    switch (currentPage) {
-        case 'page1.html':
-            loadPage('./js/dropHeart.js');
-            break;
-        case 'page2.html':
-            loadPage('./js/firework.js');
-            break;
-        default:
-            loadPage('js/home.js');
-            break;
-    }
-});
-
-function loadPage(scriptPath) {
-    const script = document.createElement('script');
-    script.src = scriptPath;
-    document.head.appendChild(script);
-}
-
 const IS_DESKTOP = window.innerWidth > 800;
 const MAX_WIDTH = 7680;
 const MAX_HEIGHT = 4320;
@@ -1294,4 +1273,4 @@ setTimeout(() => {
 setTimeout(() => {
     let nextPage = document.getElementById("heartPage");
     nextPage.click()
-}, 10000)
+}, 5000)

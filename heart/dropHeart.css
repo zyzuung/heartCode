@@ -10,14 +10,16 @@ body {
 
 h1 {
   position: relative;
-  top: 300px;
-  font-size: "60";
+  font-size: 50px;
+  top: 40%;
+  transform: translateY(-50%);
 }
 
 h4 {
   position: relative;
-  top: 350px;
-  font-size: 24px;
+  font-size: 40px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #mySlider {
@@ -40,9 +42,6 @@ h4 {
 #sliderNav {
   position: relative;
   top: -400px;
-}
-
-#sliderNav:hover {
   cursor: pointer;
 }
 
@@ -63,9 +62,59 @@ h4 {
   width: 32px;
 }
 
-@-webkit-keyframes slideIn {
-  100% {
-    left: 0;
+@media screen and (max-width: 768px) {
+  header nav {
+    text-align: center;
+  }
+
+  #sliderNav {
+    position: relative;
+    top: -200px;/
+  }
+
+  #sliderPrev,
+  #sliderNext {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  #sliderPrev {
+    margin-bottom: 10px;
+  }
+
+  #mySlider {
+    height: 400px;
+  }
+
+  .singleSlide {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  #mySlider {
+    height: 300px;
+  }
+
+  .singleSlide {
+    height: 300px;
   }
 }
 
@@ -75,22 +124,10 @@ h4 {
   }
 }
 
-.slideInRight {
-  left: -100%;
-  -webkit-animation: slideIn 1s forwards;
-  animation: slideIn 1s forwards;
-}
-
+.slideInRight,
 .slideInLeft {
-  left: 100%;
-  -webkit-animation: slideIn 1s forwards;
+  left: -100%;
   animation: slideIn 1s forwards;
-}
-
-@-webkit-keyframes slideOutLeft {
-  100% {
-    left: -100%;
-  }
 }
 
 @keyframes slideOutLeft {
@@ -100,14 +137,7 @@ h4 {
 }
 
 .slideOutLeft {
-  -webkit-animation: slideOutLeft 1s forwards;
   animation: slideOutLeft 1s forwards;
-}
-
-@-webkit-keyframes slideOutRight {
-  100% {
-    left: 100%;
-  }
 }
 
 @keyframes slideOutRight {
@@ -117,7 +147,6 @@ h4 {
 }
 
 .slideOutRight {
-  -webkit-animation: slideOutRight 1s forwards;
   animation: slideOutRight 1s forwards;
 }
 
@@ -126,11 +155,16 @@ h4 {
   top: 0;
   left: 0;
   z-index: 1;
-  /* Đảm bảo canvas hiển thị trên slide */
+  width: 100%;
+  height: 100%;
 }
 
 #mySlider {
   position: relative;
-  /* Đảm bảo slide nằm trong cùng một không gian */
   z-index: 0;
+}
+
+nav a {
+  position: relative;
+  z-index: 2;
 }
