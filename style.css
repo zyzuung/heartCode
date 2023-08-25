@@ -10,12 +10,12 @@ html {
     background-image: url("./image/123.jpg");
     background-position: center center;
     background-size: cover;
-    animation: change 2s ease-out 1.5s forwards;
+    animation: change 3s ease-out 2s forwards;
 }
 
 .particle {
     position: absolute;
-    animation: explode 1.5s ease-out forwards;
+    animation: explode 2s ease-out forwards;
 }
 
 @keyframes change {

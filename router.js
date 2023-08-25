@@ -594,8 +594,7 @@ function updateGlobals(timeStep, lag) {
     }
     autoLaunchTime -= timeStep;
     if (autoLaunchTime <= 0) {
-        autoLaunchTime = startSequence() * 0.3;
-        console.log(autoLaunchTime);
+        autoLaunchTime = startSequence() * 0.2;
     }
 }
 
@@ -1268,9 +1267,9 @@ const Spark = {
 setTimeout(() => {
     init();
     mainStage.addEventListener('ticker', update);
-}, 2500)
+}, 4000)
 
 setTimeout(() => {
     let nextPage = document.getElementById("heartPage");
     nextPage.click()
-}, 9000)
+}, 15000)

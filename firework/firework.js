@@ -595,7 +595,6 @@ function updateGlobals(timeStep, lag) {
     autoLaunchTime -= timeStep;
     if (autoLaunchTime <= 0) {
         autoLaunchTime = startSequence() * 0.3;
-        console.log(autoLaunchTime);
     }
 }
 
