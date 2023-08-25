@@ -115,3 +115,10 @@ body {
     mix-blend-mode: lighten;
     transform: translateZ(0);
 }
+
+#typing-text {
+    position: absolute;
+    top: calc(50% - 3em);
+    font-size: 24px;
+    color: #2b00ff;
+}

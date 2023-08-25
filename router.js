@@ -1264,13 +1264,27 @@ const Spark = {
         this._pool.push(instance);
     }
 }
-
+const text = "Click vào trái tim bên dưới để bắt đầu!";
+const typingText = document.getElementById("typing-text");
 const body = document.body;
 const particle = document.getElementById("particle");
+let charIndex = 0;
+
+function type() {
+    if (charIndex < text.length) {
+        typingText.textContent += text.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 100);
+    }
+}
+type();
+
+//action
 setTimeout(() => {
     particle.classList.add('show-particle');
-}, 2000)
+}, 2500)
 particle.addEventListener('click', () => {
+    typingText.style.display = "none"
     body.classList.add('animation-body');
     particle.classList.add('animation-particle');
     setTimeout(() => {
