@@ -1,0 +1,93 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("./image/123.jpg");
+    background-position: center center;
+    background-size: cover;
+    animation: change 2s ease-out 1.5s forwards;
+}
+
+.particle {
+    position: absolute;
+    animation: explode 1.5s ease-out forwards;
+}
+
+@keyframes change {
+    0% {
+        background-color: #ffffff;
+    }
+
+    100% {
+        background-color: #000000;
+        background-image: none;
+    }
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(50);
+        opacity: 0;
+    }
+}
+
+body {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Russo One", arial, sans-serif;
+    line-height: 1.25;
+    letter-spacing: 0.06em;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.remove {
+    display: none !important;
+}
+
+.blur {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stage-container {
+    overflow: hidden;
+    box-sizing: initial;
+    border: 1px solid #222;
+    margin: -1px;
+}
+
+@media (max-width: 840px) {
+    .stage-container {
+        border: none;
+        margin: 0;
+    }
+}
+
+.canvas-container {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s, -webkit-filter 0.3s;
+}
+
+.canvas-container canvas {
+    position: absolute;
+    mix-blend-mode: lighten;
+    transform: translateZ(0);
+}
