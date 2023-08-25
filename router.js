@@ -1264,12 +1264,24 @@ const Spark = {
         this._pool.push(instance);
     }
 }
-setTimeout(() => {
-    init();
-    mainStage.addEventListener('ticker', update);
-}, 4000)
 
+const body = document.body;
+const particle = document.getElementById("particle");
 setTimeout(() => {
-    let nextPage = document.getElementById("heartPage");
-    nextPage.click()
-}, 15000)
+    particle.classList.add('show-particle');
+}, 2000)
+particle.addEventListener('click', () => {
+    body.classList.add('animation-body');
+    particle.classList.add('animation-particle');
+    setTimeout(() => {
+        init();
+        mainStage.addEventListener('ticker', update);
+    }, 4000)
+
+    setTimeout(() => {
+        let nextPage = document.getElementById("heartPage");
+        nextPage.click()
+    }, 15000)
+});
+
+

@@ -1,5 +1,4 @@
-body,
-html {
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,17 +9,42 @@ html {
     background-image: url("./image/123.jpg");
     background-position: center center;
     background-size: cover;
+}
+
+.animation-body {
     animation: change 3s ease-out 2s forwards;
 }
 
-.particle {
-    position: absolute;
+.animation-particle {
     animation: explode 2s ease-out forwards;
+}
+
+.show-particle {
+    display: block !important;
+}
+
+#particle {
+    display: none;
+    position: absolute;
 }
 
 @keyframes change {
     0% {
         background-color: #ffffff;
+    }
+
+    25% {
+        background-color: #c8aeae;
+        background-image: none;
+    }
+
+    50% {
+        background-color: #816767;
+    }
+
+    75% {
+        background-color: #3e3636;
+        background-image: none;
     }
 
     100% {
