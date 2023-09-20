@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #enterDetails {
+            float: left;
+            width: 50%;
+            background-color: darkslategray;
+            color: floralwhite;
+        }
+
+        #findDetails {
+            float: left;
+            width: 50%;
+            background-color: floralwhite;
+            color: darkslategray;
+        }
+
+        input {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="enterDetails">
+        <h1>Enter details</h1>
+
+        <h4>ID</h4>
+        <input id="enterID" type="text">
+
+        <h4>Name</h4>
+        <input id="enterName" type="text">
+
+        <h4>Age</h4>
+        <input id="enterAge" type="number"> <br><br>
+
+        <button id="insert">INSERT</button>
+    </div>
+
+    <div id="listDetails">
+        <h1>List Details</h1>
+        <ul id="list"></ul>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDgT-L5PEuYdBOmqm-56LX4WijD75li-ao",
+            authDomain: "fir-4ec3c.firebaseapp.com",
+            databaseURL: "https://fir-4ec3c-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "fir-4ec3c",
+            storageBucket: "fir-4ec3c.appspot.com",
+            messagingSenderId: "169489136504",
+            appId: "1:169489136504:web:38e4e9dd52da115ffb268d"
+        };
+
+        const app = initializeApp(firebaseConfig);
+
+        import { getDatabase, set, get, update, remove, ref, child }
+            from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"
+
+        const db = getDatabase();
+
+        var enterID = document.querySelector("#enterID");
+        var enterName = document.querySelector("#enterName");
+        var enterAge = document.querySelector("#enterAge");
+        var findID = document.querySelector("#findID");
+        var findName = document.querySelector("#findName");
+        var findAge = document.querySelector("#findAge");
+
+
+        var insertBtn = document.querySelector("#insert");
+
+        function InsertData() {
+            set(ref(db, "People/" + enterID.value), {
+                Name: enterName.value,
+                ID: enterID.value,
+                Age: enterAge.value
+            })
+                .then(() => {
+                    alert("Data added successfully");
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+        }
+
+        insertBtn.addEventListener('click', InsertData);
+
+        const listContainer = document.querySelector("#list");
+
+        function FetchList() {
+            const dbref = ref(db, "People");
+            get(dbref)
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        const data = snapshot.val();
+                        console.log(data);
+                        const keys = Object.keys(data);
+                        keys.forEach((key) => {
+                            const item = data[key];
+                            const listItem = document.createElement("li");
+                            listItem.innerHTML = `ID: ${item.ID}, Name: ${item.Name}, Age: ${item.Age}`;
+                            listContainer.appendChild(listItem);
+                        });
+                    } else {
+                        alert("No data found");
+                    }
+                })
+                .catch((error) => {
+                    alert(error);
+                });
+        }
+
+        const fetchListBtn = document.createElement("button");
+        fetchListBtn.textContent = "FETCH LIST";
+        fetchListBtn.addEventListener("click", FetchList);
+        document.querySelector("#listDetails").appendChild(fetchListBtn);
+    </script>
+</body>
+
+</html>
