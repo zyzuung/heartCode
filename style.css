@@ -11,6 +11,25 @@ body {
     background-size: cover;
 }
 
+/* ////////////// */
+@keyframes beautifulAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.your-animation-class {
+    animation: beautifulAnimation 1s ease-out forwards;
+}
+
+/* ////////////// */
+
 .animation-body {
     animation: change 3s ease-out 2s forwards;
 }

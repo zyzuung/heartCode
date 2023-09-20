@@ -1264,6 +1264,7 @@ const Spark = {
         this._pool.push(instance);
     }
 }
+
 const text = "Click vào trái tim để bắt đầu!";
 const typingText = document.getElementById("typing-text");
 const body = document.body;
@@ -1283,6 +1284,7 @@ type();
 setTimeout(() => {
     particle.classList.add('show-particle');
 }, 2500)
+
 particle.addEventListener('click', () => {
     typingText.style.display = "none"
     body.classList.add('animation-body');
@@ -1291,6 +1293,10 @@ particle.addEventListener('click', () => {
         init();
         mainStage.addEventListener('ticker', update);
     }, 4000)
+
+    setTimeout(() => {
+        body.classList.add('your-animation-class');
+    }, 14000);
 
     setTimeout(() => {
         let nextPage = document.getElementById("heartPage");
