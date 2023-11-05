@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-image: url("./image/123.jpg");
+    background-image: url("./image/thumbnail.jpg");
     background-position: center center;
     background-size: cover;
 }
@@ -150,5 +150,5 @@ body {
     position: absolute;
     top: calc(50% - 3em);
     font-size: 20px;
-    color: #2b00ff;
+    color: #1eff00;
 }
